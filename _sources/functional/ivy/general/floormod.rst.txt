@@ -3,9 +3,7 @@ floormod
 
 .. autofunction:: ivy.functional.ivy.general.floormod
 
-.. autofunction:: ivy.container.container_methods.static_floormod
-
-.. autofunction:: ivy.container.container_methods.floormod
+.. autofunction:: ivy.array.array_methods.floormod
 |
 | **Supported Frameworks:**
 
@@ -25,3 +23,13 @@ floormod
 
 .. |numpy_logo| image:: ../../../logos/supported/numpy_logo.png
    :target: https://numpy.org
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: -1
+   :caption: floormod
+
+   floormod/floormod_functional.rst
+   floormod/floormod_array.rst
+
