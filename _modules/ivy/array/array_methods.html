@@ -4829,6 +4829,7 @@
 <span class="c1"># global</span>
 <span class="kn">import</span> <span class="nn">abc</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
 <span class="c1"># local</span>
 <span class="kn">import</span> <span class="nn">ivy</span>
 <span class="c1"># global</span>
@@ -6721,6 +6722,46 @@
 <span class="sd">    ivy.array([32.,   64.,  128.])</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">exp2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="copysign"><a class="viewcode-back" href="../../../functional/ivy/experimental/copysign/copysign_array.html#ivy.array.array_methods.copysign">[docs]</a><span class="k">def</span> <span class="nf">copysign</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="n">Number</span><span class="p">],</span>
+    <span class="n">x2</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="n">Number</span><span class="p">],</span>
+    <span class="o">/</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;ivy.Array instance method variant of ivy.copysign. This method simply</span>
+<span class="sd">    wraps the function, and so the docstring for ivy.copysign also applies to</span>
+<span class="sd">    this method with minimal changes.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x1</span>
+<span class="sd">        Array or scalar to change the sign of</span>
+<span class="sd">    x2</span>
+<span class="sd">        Array or scalar from which the new signs are applied</span>
+<span class="sd">        Unsigned zeroes are considered positive.</span>
+<span class="sd">    out</span>
+<span class="sd">        optional output array, for writing the result to.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        x1 with the signs of x2.</span>
+<span class="sd">        This is a scalar if both x1 and x2 are scalars.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; x1 = ivy.array([0, 1, 2, 3])</span>
+<span class="sd">    &gt;&gt;&gt; x2 = ivy.array([-1, 1, -2, 2])</span>
+<span class="sd">    &gt;&gt;&gt; x1.copysign(x2)</span>
+<span class="sd">    ivy.array([-0.,  1., -2.,  3.])</span>
+
+<span class="sd">    &gt;&gt;&gt; x2.copysign(-1)</span>
+<span class="sd">    ivy.array([-1., -1., -2., -2.])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">copysign</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="count_nonzero"><a class="viewcode-back" href="../../../functional/ivy/experimental/count_nonzero/count_nonzero_array.html#ivy.array.array_methods.count_nonzero">[docs]</a><span class="k">def</span> <span class="nf">count_nonzero</span><span class="p">(</span>
@@ -9018,7 +9059,7 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="dropout1d"><a class="viewcode-back" href="../../../functional/ivy/layers/dropout1d/dropout1d_array.html#ivy.array.array_methods.dropout1d">[docs]</a><span class="k">def</span> <span class="nf">dropout1d</span><span class="p">(</span>
+<span class="k">def</span> <span class="nf">dropout1d</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
     <span class="n">prob</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
     <span class="o">/</span><span class="p">,</span>
@@ -9033,7 +9074,7 @@
         <span class="n">training</span><span class="o">=</span><span class="n">training</span><span class="p">,</span>
         <span class="n">data_format</span><span class="o">=</span><span class="n">data_format</span><span class="p">,</span>
         <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
-    <span class="p">)</span></div>
+    <span class="p">)</span>
 
 
 <div class="viewcode-block" id="scaled_dot_product_attention"><a class="viewcode-back" href="../../../functional/ivy/layers/scaled_dot_product_attention/scaled_dot_product_attention_array.html#ivy.array.array_methods.scaled_dot_product_attention">[docs]</a><span class="k">def</span> <span class="nf">scaled_dot_product_attention</span><span class="p">(</span>
@@ -9594,6 +9635,15 @@
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="eig"><a class="viewcode-back" href="../../../functional/ivy/linear_algebra/eig/eig_array.html#ivy.array.array_methods.eig">[docs]</a><span class="k">def</span> <span class="nf">eig</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+    <span class="o">/</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+
+
 <div class="viewcode-block" id="eigh"><a class="viewcode-back" href="../../../functional/ivy/linear_algebra/eigh/eigh_array.html#ivy.array.array_methods.eigh">[docs]</a><span class="k">def</span> <span class="nf">eigh</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
     <span class="o">/</span><span class="p">,</span>
@@ -9653,6 +9703,7 @@
 <div class="viewcode-block" id="inner"><a class="viewcode-back" href="../../../functional/ivy/linear_algebra/inner/inner_array.html#ivy.array.array_methods.inner">[docs]</a><span class="k">def</span> <span class="nf">inner</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
     <span class="n">x2</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
+    <span class="o">/</span><span class="p">,</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
@@ -9733,6 +9784,16 @@
     <span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="matrix_power"><a class="viewcode-back" href="../../../functional/ivy/linear_algebra/matrix_power/matrix_power_array.html#ivy.array.array_methods.matrix_power">[docs]</a><span class="k">def</span> <span class="nf">matrix_power</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+    <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="o">/</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">matrix_power</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+
+
 <div class="viewcode-block" id="matrix_rank"><a class="viewcode-back" href="../../../functional/ivy/linear_algebra/matrix_rank/matrix_rank_array.html#ivy.array.array_methods.matrix_rank">[docs]</a><span class="k">def</span> <span class="nf">matrix_rank</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
     <span class="o">/</span><span class="p">,</span>
@@ -9802,7 +9863,7 @@
 
 
 <div class="viewcode-block" id="matrix_transpose"><a class="viewcode-back" href="../../../functional/ivy/linear_algebra/matrix_transpose/matrix_transpose_array.html#ivy.array.array_methods.matrix_transpose">[docs]</a><span class="k">def</span> <span class="nf">matrix_transpose</span><span class="p">(</span>
-    <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Transposes a matrix (or a stack of matrices) ``x``.</span>
@@ -9839,6 +9900,7 @@
 <div class="viewcode-block" id="outer"><a class="viewcode-back" href="../../../functional/ivy/linear_algebra/outer/outer_array.html#ivy.array.array_methods.outer">[docs]</a><span class="k">def</span> <span class="nf">outer</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
     <span class="n">x2</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
+    <span class="o">/</span><span class="p">,</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
@@ -9847,6 +9909,7 @@
 
 <div class="viewcode-block" id="pinv"><a class="viewcode-back" href="../../../functional/ivy/linear_algebra/pinv/pinv_array.html#ivy.array.array_methods.pinv">[docs]</a><span class="k">def</span> <span class="nf">pinv</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+    <span class="o">/</span><span class="p">,</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">rtol</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -9927,6 +9990,7 @@
 <div class="viewcode-block" id="solve"><a class="viewcode-back" href="../../../functional/ivy/linear_algebra/solve/solve_array.html#ivy.array.array_methods.solve">[docs]</a><span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
     <span class="n">x2</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
+    <span class="o">/</span><span class="p">,</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
@@ -9935,6 +9999,7 @@
 
 <div class="viewcode-block" id="svd"><a class="viewcode-back" href="../../../functional/ivy/linear_algebra/svd/svd_array.html#ivy.array.array_methods.svd">[docs]</a><span class="k">def</span> <span class="nf">svd</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+    <span class="o">/</span><span class="p">,</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">compute_uv</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">full_matrices</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
@@ -9942,8 +10007,18 @@
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">compute_uv</span><span class="o">=</span><span class="n">compute_uv</span><span class="p">,</span> <span class="n">full_matrices</span><span class="o">=</span><span class="n">full_matrices</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="svdvals"><a class="viewcode-back" href="../../../functional/ivy/linear_algebra/svdvals/svdvals_array.html#ivy.array.array_methods.svdvals">[docs]</a><span class="k">def</span> <span class="nf">svdvals</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<div class="viewcode-block" id="svdvals"><a class="viewcode-back" href="../../../functional/ivy/linear_algebra/svdvals/svdvals_array.html#ivy.array.array_methods.svdvals">[docs]</a><span class="k">def</span> <span class="nf">svdvals</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">svdvals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="tensorsolve"><a class="viewcode-back" href="../../../functional/ivy/linear_algebra/tensorsolve/tensorsolve_array.html#ivy.array.array_methods.tensorsolve">[docs]</a><span class="k">def</span> <span class="nf">tensorsolve</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+    <span class="n">x2</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
+    <span class="o">/</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">axes</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">tensorsolve</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="trace"><a class="viewcode-back" href="../../../functional/ivy/linear_algebra/trace/trace_array.html#ivy.array.array_methods.trace">[docs]</a><span class="k">def</span> <span class="nf">trace</span><span class="p">(</span>
@@ -10024,7 +10099,7 @@
 
 
 <div class="viewcode-block" id="vector_to_skew_symmetric_matrix"><a class="viewcode-back" href="../../../functional/ivy/linear_algebra/vector_to_skew_symmetric_matrix/vector_to_skew_symmetric_matrix_array.html#ivy.array.array_methods.vector_to_skew_symmetric_matrix">[docs]</a><span class="k">def</span> <span class="nf">vector_to_skew_symmetric_matrix</span><span class="p">(</span>
-    <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">vector_to_skew_symmetric_matrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
 
