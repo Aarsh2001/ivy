@@ -102,6 +102,7 @@ Experimental
    experimental/beta.rst
    experimental/gamma.rst
    experimental/poisson.rst
+   experimental/bernoulli.rst
    experimental/isin.rst
    experimental/msort.rst
    experimental/SparseArray.rst

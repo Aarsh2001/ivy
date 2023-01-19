@@ -8375,6 +8375,60 @@
     <span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="bernoulli"><a class="viewcode-back" href="../../../functional/ivy/experimental/bernoulli/bernoulli_array.html#ivy.array.array_methods.bernoulli">[docs]</a><span class="k">def</span> <span class="nf">bernoulli</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">logits</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">shape</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Shape</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeShape</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">device</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Device</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeDevice</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeDtype</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">seed</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    self</span>
+<span class="sd">         An N-D Array representing the probability of a 1 event.</span>
+<span class="sd">         Each entry in the Array parameterizes an independent Bernoulli</span>
+<span class="sd">         distribution. Only one of logits or probs should be passed in</span>
+<span class="sd">    logits</span>
+<span class="sd">        An N-D Array representing the log-odds of a 1 event.</span>
+<span class="sd">        Each entry in the Array parameterizes an independent Bernoulli</span>
+<span class="sd">        distribution where the probability of an event is sigmoid</span>
+<span class="sd">        (logits). Only one of logits or probs should be passed in.</span>
+<span class="sd">    shape</span>
+<span class="sd">        If the given shape is, e.g &#39;(m, n, k)&#39;, then &#39;m * n * k&#39; samples are drawn.</span>
+<span class="sd">        (Default value = &#39;None&#39;, where &#39;ivy.shape(logits)&#39; samples are drawn)</span>
+<span class="sd">    device</span>
+<span class="sd">        device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc.</span>
+<span class="sd">        (Default value = None).</span>
+<span class="sd">    dtype</span>
+<span class="sd">        output array data type. If ``dtype`` is ``None``, the output array data</span>
+<span class="sd">        type will be the default floating-point data type. Default ``None``</span>
+<span class="sd">    seed</span>
+<span class="sd">        A python integer. Used to create a random seed distribution</span>
+<span class="sd">    out</span>
+<span class="sd">        optional output array, for writing the result to. It must</span>
+<span class="sd">        have a shape that the inputs broadcast to.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Drawn samples from the Bernoulli distribution</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">bernoulli</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">logits</span><span class="o">=</span><span class="n">logits</span><span class="p">,</span>
+        <span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span>
+        <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+        <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
+        <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
+        <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
 <div class="viewcode-block" id="isin"><a class="viewcode-back" href="../../../functional/ivy/experimental/isin/isin_array.html#ivy.array.array_methods.isin">[docs]</a><span class="k">def</span> <span class="nf">isin</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
     <span class="n">test_elements</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
@@ -10298,6 +10352,37 @@
     <span class="n">data_format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;NWC&quot;</span><span class="p">,</span>
     <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ivy.Array instance method variant of ivy.dropout1d. This method simply</span>
+<span class="sd">    wraps the function, and so the docstring for ivy.droput1d also applies</span>
+<span class="sd">    to this method with minimal changes.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    self</span>
+<span class="sd">        The input array x to perform dropout on.</span>
+<span class="sd">    prob</span>
+<span class="sd">        The probability of zeroing out each array element, float between 0 and 1.</span>
+<span class="sd">    training</span>
+<span class="sd">        Turn on dropout if training, turn off otherwise. Default is ``True``.</span>
+<span class="sd">    data_format</span>
+<span class="sd">        &quot;NWC&quot; or &quot;NCW&quot;. Default is ``&quot;NCW&quot;``.</span>
+<span class="sd">    out</span>
+<span class="sd">        optional output array, for writing the result to. It must have</span>
+<span class="sd">        a shape that the inputs broadcast to.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Result array of the output after dropout is performed.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.array([1, 1, 1]).reshape([1, 1, 3])</span>
+<span class="sd">    &gt;&gt;&gt; y = x.dropout1d(0.5)</span>
+<span class="sd">    &gt;&gt;&gt; print(y)</span>
+<span class="sd">    ivy.array([[[2., 0, 2.]]])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dropout1d</span><span class="p">(</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span>
         <span class="n">prob</span><span class="p">,</span>
