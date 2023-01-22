@@ -46,6 +46,7 @@ Experimental
    experimental/beta.rst
    experimental/gamma.rst
    experimental/poisson.rst
+   experimental/bernoulli.rst
    experimental/logit.rst
    experimental/msort.rst
    experimental/triu_indices.rst
@@ -66,6 +67,7 @@ Experimental
    experimental/dropout1d.rst
    experimental/ifft.rst
    experimental/embedding.rst
+   experimental/dft.rst
    experimental/is_ivy_sparse_array.rst
    experimental/is_native_sparse_array.rst
    experimental/native_sparse_array.rst
@@ -94,7 +96,6 @@ Experimental
    experimental/nan_to_num.rst
    experimental/logaddexp2.rst
    experimental/signbit.rst
-   experimental/hypot.rst
    experimental/diff.rst
    experimental/allclose.rst
    experimental/fix.rst
