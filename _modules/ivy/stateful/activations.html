@@ -515,8 +515,8 @@ document.write(`
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">gelu</span><span class="p">(</span><span class="n">gates</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span></div>
 
 
-<div class="viewcode-block" id="RELU"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.RELU">[docs]</a><span class="k">class</span> <span class="nc">RELU</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-<div class="viewcode-block" id="RELU.__init__"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.RELU.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ReLU"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.ReLU">[docs]</a><span class="k">class</span> <span class="nc">ReLU</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<div class="viewcode-block" id="ReLU.__init__"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.ReLU.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Applies the RELU activation function</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -538,8 +538,8 @@ document.write(`
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="LEAKY_RELU"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.LEAKY_RELU">[docs]</a><span class="k">class</span> <span class="nc">LEAKY_RELU</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-<div class="viewcode-block" id="LEAKY_RELU.__init__"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.LEAKY_RELU.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">):</span>
+<div class="viewcode-block" id="LeakyReLU"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.LeakyReLU">[docs]</a><span class="k">class</span> <span class="nc">LeakyReLU</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<div class="viewcode-block" id="LeakyReLU.__init__"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.LeakyReLU.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Applies the LEAKY RELU activation function</span>
 <span class="sd">        Parameters</span>
@@ -568,8 +568,8 @@ document.write(`
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">leaky_relu</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_alpha</span><span class="p">))</span></div>
 
 
-<div class="viewcode-block" id="LOG_SOFTMAX"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.LOG_SOFTMAX">[docs]</a><span class="k">class</span> <span class="nc">LOG_SOFTMAX</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-<div class="viewcode-block" id="LOG_SOFTMAX.__init__"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.LOG_SOFTMAX.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LogSoftmax"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.LogSoftmax">[docs]</a><span class="k">class</span> <span class="nc">LogSoftmax</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<div class="viewcode-block" id="LogSoftmax.__init__"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.LogSoftmax.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Applies the LOG SOFTMAX activation function</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -592,8 +592,8 @@ document.write(`
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">log_softmax</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="SOFTMAX"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.SOFTMAX">[docs]</a><span class="k">class</span> <span class="nc">SOFTMAX</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-<div class="viewcode-block" id="SOFTMAX.__init__"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.SOFTMAX.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Softmax"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.Softmax">[docs]</a><span class="k">class</span> <span class="nc">Softmax</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<div class="viewcode-block" id="Softmax.__init__"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.Softmax.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Applies the SOFTMAX activation function</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -617,8 +617,8 @@ document.write(`
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="SOFTPLUS"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.SOFTPLUS">[docs]</a><span class="k">class</span> <span class="nc">SOFTPLUS</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-<div class="viewcode-block" id="SOFTPLUS.__init__"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.SOFTPLUS.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Softplus"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.Softplus">[docs]</a><span class="k">class</span> <span class="nc">Softplus</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<div class="viewcode-block" id="Softplus.__init__"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.Softplus.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Applies the SOFTPLUS activation function</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -646,8 +646,8 @@ document.write(`
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">softplus</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">beta</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="n">threshold</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="MISH"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.MISH">[docs]</a><span class="k">class</span> <span class="nc">MISH</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-<div class="viewcode-block" id="MISH.__init__"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.MISH.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Mish"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.Mish">[docs]</a><span class="k">class</span> <span class="nc">Mish</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<div class="viewcode-block" id="Mish.__init__"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.activations.html#ivy.stateful.activations.Mish.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Applies the MISH activation function</span>
 <span class="sd">        &quot;&quot;&quot;</span>
