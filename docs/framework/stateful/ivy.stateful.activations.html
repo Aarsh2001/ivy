@@ -502,6 +502,20 @@ document.write(`
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="ivy.stateful.activations.LEAKY_RELU">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.stateful.activations.</span></span><span class="sig-name descname"><span class="pre">LEAKY_RELU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/stateful/activations.html#LEAKY_RELU"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.activations.LEAKY_RELU" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="ivy.stateful.module.html#ivy.stateful.module.Module" title="ivy.stateful.module.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ivy.stateful.activations.LEAKY_RELU.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/stateful/activations.html#LEAKY_RELU.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.activations.LEAKY_RELU.__init__" title="Permalink to this definition">#</a></dt>
+<dd><p>Applies the LEAKY RELU activation function
+:type alpha: <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>
+:param alpha: Negative slope for ReLU. (default: <code class="docutils literal notranslate"><span class="pre">0.2</span></code>)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="ivy.stateful.activations.LOG_SOFTMAX">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.stateful.activations.</span></span><span class="sig-name descname"><span class="pre">LOG_SOFTMAX</span></span><a class="reference internal" href="../../../_modules/ivy/stateful/activations.html#LOG_SOFTMAX"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.activations.LOG_SOFTMAX" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="ivy.stateful.module.html#ivy.stateful.module.Module" title="ivy.stateful.module.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></a></p>
@@ -509,20 +523,6 @@ document.write(`
 <dt class="sig sig-object py" id="ivy.stateful.activations.LOG_SOFTMAX.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/stateful/activations.html#LOG_SOFTMAX.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.activations.LOG_SOFTMAX.__init__" title="Permalink to this definition">#</a></dt>
 <dd><p>Applies the LOG SOFTMAX activation function</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="ivy.stateful.activations.LRELU">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.stateful.activations.</span></span><span class="sig-name descname"><span class="pre">LRELU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/stateful/activations.html#LRELU"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.activations.LRELU" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="ivy.stateful.module.html#ivy.stateful.module.Module" title="ivy.stateful.module.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="ivy.stateful.activations.LRELU.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/stateful/activations.html#LRELU.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.activations.LRELU.__init__" title="Permalink to this definition">#</a></dt>
-<dd><p>Applies the LEAKY RELU activation function
-:type alpha: <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>
-:param alpha: Negative slope for ReLU. (default: <code class="docutils literal notranslate"><span class="pre">0.2</span></code>)</p>
 </dd></dl>
 
 </dd></dl>
@@ -627,12 +627,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.stateful.activations.GELU.__init__"><code class="docutils literal notranslate"><span class="pre">GELU.__init__()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.stateful.activations.LOG_SOFTMAX"><code class="docutils literal notranslate"><span class="pre">LOG_SOFTMAX</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.stateful.activations.LOG_SOFTMAX.__init__"><code class="docutils literal notranslate"><span class="pre">LOG_SOFTMAX.__init__()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.stateful.activations.LEAKY_RELU"><code class="docutils literal notranslate"><span class="pre">LEAKY_RELU</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.stateful.activations.LEAKY_RELU.__init__"><code class="docutils literal notranslate"><span class="pre">LEAKY_RELU.__init__()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.stateful.activations.LRELU"><code class="docutils literal notranslate"><span class="pre">LRELU</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.stateful.activations.LRELU.__init__"><code class="docutils literal notranslate"><span class="pre">LRELU.__init__()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.stateful.activations.LOG_SOFTMAX"><code class="docutils literal notranslate"><span class="pre">LOG_SOFTMAX</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.stateful.activations.LOG_SOFTMAX.__init__"><code class="docutils literal notranslate"><span class="pre">LOG_SOFTMAX.__init__()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.stateful.activations.MISH"><code class="docutils literal notranslate"><span class="pre">MISH</span></code></a><ul class="nav section-nav flex-column">
