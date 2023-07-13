@@ -333,3 +333,17 @@ def fold(input, output_size, kernel_size, dilation=1, padding=0, stride=1):
     if orig_ndim == 2:
         return ivy.squeeze(ret, axis=0)
     return ret
+
+
+@to_ivy_arrays_and_back
+def scaled_dot_product_attention(
+    q,
+    k,
+    v,
+    scale: float,
+    /,
+    *,
+    mask,
+    out,
+):
+    return ivy.scaled_dot_product_attention(q, k, v, scale, mask=mask, out=out)
